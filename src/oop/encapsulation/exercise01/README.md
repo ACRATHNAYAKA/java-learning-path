@@ -1,4 +1,4 @@
-# Java OOP: Encapsulation and Data Validation Challenge 🛡️
+# Java oop: Encapsulation and Data Validation Challenge 🛡️
 
 ## 📌 Problem Description
 In Object-Oriented Programming, protecting the internal state of an object is crucial. This project demonstrates a common real-world scenario where we need to manage a **Book** entity while ensuring that no invalid data (like negative prices or empty titles) enters the system.
