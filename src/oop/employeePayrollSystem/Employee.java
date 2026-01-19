@@ -1,5 +1,7 @@
 package oop.employeePayrollSystem;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Employee {
@@ -32,21 +34,22 @@ public class Employee {
         this.department = department;
     }
 
-    public double calculateSalary(){
-        return basicSalary;
+    public String calculateSalary(){
+        NumberFormat currency = NumberFormat.getCurrencyInstance(new Locale("Eng","SL"));
+
+        return currency.format(basicSalary);
     }
 
     public void displayDetails(){
         System.out.println("----------------Employee Details---------------");
-        System.out.println("Employee ID   : "+empID);
-        System.out.println("Employee Name : "+name);
-        System.out.println("Base Salary   : "+basicSalary);
-        System.out.println("Department    : "+department);
-        System.out.println();
+        System.out.println("Employee ID    : "+empID);
+        System.out.println("Employee Name  : "+name);
+        System.out.println("Base Salary    : "+basicSalary);
+        System.out.println("Department     : "+department);
     }
     @Override
     public String toString(){
-        return "Employee ID   : "+empID+" Employee Name : "+name+" Base Salary   : "+basicSalary+" Department    : "+department;
+        return "Employee ID:"+empID+" Employee Name:"+name+" Base Salary:"+basicSalary+" Department:"+department;
     }
     @Override
     public boolean equals(Object obj){
