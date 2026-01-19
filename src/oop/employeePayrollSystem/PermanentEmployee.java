@@ -1,8 +1,5 @@
 package oop.employeePayrollSystem;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class PermanentEmployee extends Employee {
     private final double epfPercentage;
     private final double bonus;
@@ -20,12 +17,8 @@ public class PermanentEmployee extends Employee {
         this.bonus = bonus;
     }
     @Override
-    public String calculateSalary(){
-
-        double salary = basicSalary+bonus-(basicSalary*epfPercentage/100);
-        NumberFormat currency = NumberFormat.getCurrencyInstance(new Locale("Eng","SL"));
-
-        return currency.format(salary);
+    public double calculateSalary(){
+        return basicSalary+bonus-(basicSalary*epfPercentage/100);
     }
 
     @Override

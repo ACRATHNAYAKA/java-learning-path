@@ -1,7 +1,5 @@
 package oop.employeePayrollSystem;
 
-import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.Objects;
 
 public class Employee {
@@ -20,7 +18,7 @@ public class Employee {
             throw new IllegalArgumentException("Employee Name Cant be Null");
         }
 
-        if (basicSalary<=0){
+        if (basicSalary<0){
             throw new IllegalArgumentException("Base Salary Cant be Zero or Negative");
         }
 
@@ -34,14 +32,12 @@ public class Employee {
         this.department = department;
     }
 
-    public String calculateSalary(){
-        NumberFormat currency = NumberFormat.getCurrencyInstance(new Locale("Eng","SL"));
-
-        return currency.format(basicSalary);
+    public double calculateSalary(){
+        return basicSalary;
     }
 
     public void displayDetails(){
-        System.out.println("----------------Employee Details---------------");
+        System.out.println("Employee Details");
         System.out.println("Employee ID    : "+empID);
         System.out.println("Employee Name  : "+name);
         System.out.println("Base Salary    : "+basicSalary);

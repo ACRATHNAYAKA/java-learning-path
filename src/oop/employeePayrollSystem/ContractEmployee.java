@@ -1,14 +1,11 @@
 package oop.employeePayrollSystem;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class ContractEmployee extends Employee {
     private final int hoursWorked;
     private final double hourlyRate;
 
 
-    public ContractEmployee(String empID, String name, String department, int hoursWorked, int hourlyRate) {
+    public ContractEmployee(String empID, String name, String department, int hoursWorked, double hourlyRate) {
         super(empID, name, 0, department);
 
         if (hoursWorked<0){
@@ -24,11 +21,8 @@ public class ContractEmployee extends Employee {
     }
 
     @Override
-    public String calculateSalary(){
-        double salary = hoursWorked*hourlyRate;
-
-        NumberFormat currency = NumberFormat.getCurrencyInstance(new Locale("Eng", "LKR"));
-        return currency.format(salary);
+    public double calculateSalary(){
+        return hoursWorked*hourlyRate;
     }
 
     @Override
