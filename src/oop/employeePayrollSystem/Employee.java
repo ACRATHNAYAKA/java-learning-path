@@ -57,7 +57,7 @@ public class Employee {
         if (obj == null || getClass() != obj.getClass()) return false;
 
         Employee employee = (Employee) obj;
-        return empID == employee.empID;
+        return Objects.equals(empID, employee.empID);
     }
     @Override
     public int hashCode(){

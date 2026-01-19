@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public class PermanentEmployee extends Employee {
     private final double epfPercentage;
-    private double bonus;
+    private final double bonus;
 
     public PermanentEmployee(String empID, String name, double basicSalary, String department,double epfPercentage, double bonus){
         super(empID, name, basicSalary, department);
