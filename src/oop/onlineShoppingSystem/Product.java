@@ -69,11 +69,9 @@ public class Product {
         if (this == obj){
             return true;
         }
-
         if (obj == null || getClass() != obj.getClass()){
             return false;
         }
-
         Product product = (Product) obj;
         return Objects.equals(productID,product.productID);
     }
