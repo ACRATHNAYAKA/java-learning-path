@@ -56,7 +56,13 @@ public class Product {
     }
 
     public boolean reduceStock( int qty){
-        return qty<=stockQuantity;
+        if (qty>stockQuantity){
+            return false;
+        }
+        else {
+            stockQuantity -= qty;
+            return true;
+        }
     }
 
     @Override

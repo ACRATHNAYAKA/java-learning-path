@@ -67,7 +67,7 @@ public class Order {
 
     public String processOrder(){
        if (orderedProduct.isInStock() && orderedProduct.reduceStock(quantity)){
-           customer.setLoyalPoint((int) calculateTotal() /100);
+           customer.addLoyalPoint((int) calculateTotal() /100);
            return "Order Processed";
        }
        else {
@@ -101,5 +101,9 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hash(orderID);
+    }
+
+    public String getOrderID() {
+        return orderID;
     }
 }

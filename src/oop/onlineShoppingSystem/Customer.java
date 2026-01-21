@@ -14,7 +14,7 @@ public class Customer {
     private int loyalPoint;
 
 
-    public Customer(String customerID, String customerName, String email, int loyalPoint){
+    public Customer(String customerID, String customerName, String email){
         if (customerID == null || customerID.isBlank()){
             throw new IllegalArgumentException("Customer ID cant be Negative or Blank");
         }
@@ -27,14 +27,10 @@ public class Customer {
             throw new IllegalArgumentException("E mail must Wanted");
         }
 
-        if (loyalPoint<0){
-            throw new IllegalArgumentException("Loyal Point cant be Negative");
-        }
 
         this.customerID =customerID;
         this.customerName =customerName;
         this.email =email;
-        this.loyalPoint = loyalPoint;
     }
 
 
@@ -63,6 +59,9 @@ public class Customer {
     }
 
     public void addLoyalPoint(int points){
+        if (points > 0) {
+            this.loyalPoint += points;
+        }
         loyalPoint+=points;
     }
 
