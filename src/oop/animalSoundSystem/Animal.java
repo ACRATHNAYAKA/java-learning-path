@@ -1,5 +1,7 @@
 package oop.animalSoundSystem;
 
+import java.util.Objects;
+
 public abstract class Animal {
     private final String animalID;
     private String name;
@@ -27,7 +29,7 @@ public abstract class Animal {
     abstract String makeSound();
     abstract String move();
 
-    private String describe(){
+    public String describe(){
         return name+" is "+age+" years old, say "+makeSound()+" and "+ move();
     }
 
@@ -38,11 +40,16 @@ public abstract class Animal {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Animal animal = (Animal) obj;
+
+        return animalID == animal.animalID;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hashCode(animalID);
     }
 }
