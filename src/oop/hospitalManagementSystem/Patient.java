@@ -1,13 +1,12 @@
 package oop.hospitalManagementSystem;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Patient {
 
 
-    private final String patientID;
+    private String patientID = "";
     private String patientName;
     private int age;
     protected String bloodGroup;
@@ -15,7 +14,7 @@ public class Patient {
 
     private String [] bloodGroups = {"A+","A-","B+","B-","O+","O-","AB+","AB-"};
 
-    public Patient(String patientID, String patientName, int age, String bloodGroup, int wardNumber){
+    public Patient(){
         if (patientID == null || patientID.isBlank()) throw new IllegalArgumentException("Patient ID cant be Null");
         if (age <0 || age>150 ) throw new IllegalArgumentException("Patient age must between 0 and 150");
         if (Arrays.stream(bloodGroups).anyMatch(x-> x!=bloodGroup)) throw new IllegalArgumentException("Invalid Blood Group");
